@@ -1,0 +1,219 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Body background and text colour  */
+body {
+    font-family: 'Kosugi Maru', sans-serif;
+    background: #f5f1e8;
+    color: #222;
+    line-height: 1.4;
+}
+
+/* header text colour and background colour */
+header {
+    padding: 80px 10%;
+    background: #306790;
+    color: rgb(255, 255, 255);
+}
+
+
+/* top row: h1 + image side by side */
+.header-top {
+    display: flex;
+    justify-content: space-between; /* header left, image right */
+    align-items: center;            /* vertical alignment */
+    
+}
+ 
+/* Top row: header + PNG side by side */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-top h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 80px;
+    letter-spacing: 2px;
+    margin: 0px;
+}
+
+.header-top .header-icon {
+    width: 450px;
+    height: auto;
+    margin: 0px;
+
+}
+
+/* Bottom row: subheading + website button */
+.header-bottom p {
+    margin-top: 10px;
+    font-size: 22px;
+    font-family: 'kosugi maru', sans-serif;
+}
+
+.header-bottom a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 18px;
+    background: rgb(255, 255, 255);
+    color: #222;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: bold;
+    font-family: 'kosugi maru', sans-serif;
+}
+
+/* The link below the header is styled as a rounded button to clearly indicate 
+  clickability to the user. Rounded corners and padding create a visually 
+  appealing and approachable element that draws attention. Adding a way to
+  visit the website that is being reviewed allows the user to under my own
+  experience better by having the actual referenced website side to side to
+  mine. */
+
+
+/* Thin line around the whole page */
+body {
+    border: 1px solid #282323; /* thin frame */
+    margin: 10px; /* space between content and border */
+}
+
+
+
+
+
+
+/* Sections on my webpage */
+section {
+    padding: 80px 10%;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+/* Alternate colours for sections */
+section:nth-child(even) {
+    background: #ffffff;
+}
+
+section:nth-child(odd) {
+    background: #f1e9dc;
+}
+
+/* Headings, h2= heading of each section, h3= subheading */
+h2 {
+    font-size: 40px;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+
+h2 {
+    font-family: 'Kosugi Maru', sans-serif;
+    font-size: 50px;
+    -webkit-text-stroke: 1px #222; /* adds an outline for bold effect */
+    color: #222;
+}
+
+
+/* grey blocks that go under the text */
+article {
+    background: rgba(0,0,0,0.03);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+/* bullet point positioning  */
+ul {
+    list-style-position: outside;
+    padding-left: 20px;
+}
+section:nth-child(even) ul {
+    text-align: left;
+    display: inline-block;
+}
+/* Having seperate grey blocks behind every seperate questions allow users
+to differentiate between each individual question and answer cleraly,
+allowing easier understanding and higher eligbility. */
+
+/* video styling */
+iframe {
+  display: block;
+  margin: 40px auto;
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+/* lines next to headers */
+section:nth-child(even) h2::after {
+    content: "";
+    display: inline-block;
+    width: 65px;
+    height: 5px;
+    background: #222;
+    margin-left: 25px;
+    vertical-align: middle;
+}
+
+section:nth-child(odd) h2::before {
+    content: "";
+    display: inline-block;
+    width: 65px;
+    height: 6px;
+    background: #222;
+    margin-right: 25px;
+    vertical-align: middle;
+}
+
+
+/* Asymmetry, alternating sides of headers */
+section:nth-child(even) h2 {
+    text-align: right;
+}
+
+section:nth-child(even) article {
+    margin-left: auto;
+}
+
+/* drop shadow for headers */
+h2 {
+    position: relative;
+    z-index: 1;
+    text-shadow: 4px 4px 0 rgba(0,0,0,0.15);
+}
+
+
+
+
+/* Allows the overlay text to stay inside section */
+section {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Forces all content above the background text */
+section * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Footer */
+footer {
+    padding: 40px 10%;
+    background:#306790;
+    color: white;
+}
+
+footer a {
+    color: #a8dadc;
+}

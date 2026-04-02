@@ -1,20 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
+     <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Media</title>
 </head>
+<!-- 
+  For my font choice, I selected Kosugi Maru and Poppin. Both are from Google Fonts. 
+  I chose Poppins for the main title heading because its geometric, modern style 
+  creates a clean and professional visual tone as its the first thing you see. It
+  also scales well across screen sizes with consistent letter spacing. I had issues with 
+  another font earlier that had inconsistent font spacing. For the subtitles and the body
+  of the website, i used Kosugi Maru as I wanted that more retro typewriter look to tie in
+  the retro disney theme. 
+ 
+-->
 
 <body>
-<header>
-  <h1>Interactive Experience Analysis</h1>
-  <p>Frank Gehry – Walt Disney Concert Hall</p>
-  <a href="https://gehry.getty.edu/">Visit the website</a>
-</header>
+<header class="header-title">
+  <!-- Top row: h1 left, PNG right -->
+  <div class="header-top">
+    <h1>Interactive Experience Analysis</h1>
+    <img src="disneycastle.png" alt="DisneyCastle" class="header-icon">
+  </div>
 
+  <!-- Bottom row: paragraph + link -->
+  <div class="header-bottom">
+    <p>Frank Gehry – Walt Disney Concert Hall</p>
+    <a href="https://gehry.getty.edu/">Visit The Website</a>
+  </div>
+</header>
+<!-- 
+I chose this experience because the Gehry interactive site uses 3D models 
+and explores architectural design in an engaging way. The site’s first impression was cinematic as
+it uses smooth scrolling transition along side spatial which really drew me in the most initially out 
+of any of the other sites. The immersive visuals creating a sense of entering a virtual architectural 
+environment as if I was visiting the building instead of just reading about it online. 
+They did a great job achieving their aim which was to communicate the
+conceptual and spatial qualities of Gehry’s design in a way that feels 
+more like exploration than passive browsing.
+-->
 <main> 
-    
  <section id="first-impression">
   <h2>First Impression</h2>
 
@@ -23,6 +53,20 @@
     <h3>Question 1: What was the first thing you paid attention to when interacting with the experience?</h3>
   <p>The first thing I noticed was the classical music playing in the background and the cinematic animations. The moving 3D model of the Walt Disney Concert Hall immediately stood out, and the smooth scrolling transitions made the website feel very grand and immersive, almost like entering a digital exhibition. </p>
   </article>
+<video class="response-media" autoplay muted loop playsinline width="300" height="200">
+    <source src="websiterecording.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+<!-- 
+
+  I  tried to choose semantic HTML elements whenever I can to improve the clarity of the code. 
+  Using <header>, <main>, and <article> makes it immediately clear which parts of 
+  the page serve as the main introduction, content sections, and standalone responses. 
+  This structure helps future developers (or me, when updating the page) quickly 
+  understand how the page is organized without having to read through numerous <div> tags. 
+  
+-->
 
 </section>
 
@@ -142,11 +186,44 @@
 
 <footer>
      <p>Frank Gehry – Walt Disney Concert Hall</p>
-  <a href="https://gehry.getty.edu/">Visit the website</a>
+  <a href="https://gehry.getty.edu/">Visit The Website</a>
 
   <p>By Danica Cheng (s4172911)</p>
 </footer>
-    
+  
+
+<!-- 
+The Gehry interactive website was created by the Getty 
+Research Institute and digital agency Resn to showcase Gehry’s design process. 
+It combines archival sketches, photos, 3D models, and interviews into an 
+immersive web experience. Interactive scrolling and animations allow users to 
+explore Gehry’s projects step by step, blending storytelling with multimedia. 
+The design reflects his experimental architectural style while guiding users 
+through the narrative of his work.
+References:
+-EAHN overview of Sculpting Harmony and its purpose in digital storytelling and archival presentation
+ https://eahn.org/2023/11/sculpting-harmony/
+-Communication Arts discussion of the collaboration between Getty and Resn on the interactive site
+ https://www.commarts.com/webpicks/sculpting-harmony
+-->
+ 
+<!-- 
+ External Sources Used: 
+ Google Fonts
+ -   <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+ -   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+ PNG:
+ https://www.pngegg.com/en/png-cwpfr/download
+
+Research:
+ -EAHN overview of Sculpting Harmony and its purpose in digital storytelling and archival presentation
+ https://eahn.org/2023/11/sculpting-harmony/
+-Communication Arts discussion of the collaboration between Getty and Resn on the interactive site
+ https://www.commarts.com/webpicks/sculpting-harmony
+
+-->
+
 
 </body>
 </html>
