@@ -111,19 +111,36 @@ function pauseTimer() { //Pause timer, whicih can stop timer temporarily
 //Reset button 
 function resetTimer() { //Reset timer value
   clearInterval(timer); //Stops timer
+   running = false; //Allows timer to be restarted
 
-  time = 25 * 60; //Resets timer to 25 minutes
-  running = false; //Allows timer to be restarted
+   // reset timer + mode
+  time = 25 * 60;
+  mode = "focus";
 
-  document.body.classList.remove( //Remove all modes to go back to original background colour
-    "focus",
-    "break",
-    "long-break"
-  );
-
+  // reset display
   updateDisplay();
+ 
+
+ // reset background styles
+  document.body.classList.remove("break", "long-break"); //Removes CSS styling
+  document.body.classList.add("focus"); //Adds focus class back to page
+
+  // reset button highlight
+  const modeButtons = document.querySelectorAll(".mode-btn"); //Finds all mode buttons
+  modeButtons.forEach(b => b.classList.remove("active")); //Removes active from all mode buttons
+
+  document.querySelector('[onclick="setFocus()"]') //Rehighlights the focus button
+    .classList.add("active"); 
 }
  
+
+
+
+
+
+
+
+
 
 const buttons = document.querySelectorAll(".timer-buttons button"); //Selects all buttons inside timer section
 

@@ -9,28 +9,41 @@
   box-sizing: border-box;
 }
 
+/*
+selecting everything to have universal box sizing, allows padding to stay inside the width.
+*/ 
+
+
+
+
 * {
-  margin: 0;
-  padding: 0;
-  font: inherit; /* Get rid of all font sizes and heights */
+  margin: 0;      /*Removes default outside spacing as browsers add margins to headings automatically. */
+  padding: 0;     /*Removes inside spacing. */
+  font: inherit; /*All text inherits my chosen font instead. */
+  /* Get rid of all font sizes and heights, resets default browser styling. */
 }
 
+
+
 html {
-  color-scheme: dark light; /* Default dark */
-  hanging-punctuation: first last; /* Not supported in Chrome */
+  color-scheme: dark light; /* Default dark, tells browser my site supports dark and light themes. */
+  hanging-punctuation: first last; /* Advanced typography feature where it allows punctuation to “hang” outside text 
+  edges slightly which makes paragraphs look visually cleaner. Not supported in Chrome. */
 }
 
 body {
-  min-height: 100vh;
+  min-height: 100vh;  /*100 view point height is full screen height, makes it so body always fills screen.*/ 
 }
 
-/* Media responsive */
+
+/*Media responsive, targets all media elements to make them behave like blocks instead of inline elements.
+It removes weird spacing issues.  */
 img,
 picture,
 svg,
 video {
   display: block;
-  max-width: 100%;
+  max-width: 100%;    /*Makes media shrinks to fit container, as without this images/videos can overflow screen.*/
 }
 
 h1,
@@ -38,18 +51,21 @@ h2,
 h3,
 h4,
 h5,
-h6 {
-  text-wrap: balance;
+h6 { /* Targets all headings. */
+  text-wrap: balance;   /*Balances heading lines nicely. */
 }
 
 p {
   /* max-width: 75ch; */
-  text-wrap: pretty; /* Prevents orphans on lines */
+  text-wrap: pretty; /* Improves line breaks in paragraphs. Prevents orphans on lines or ugly paragraph wrapping. */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  :has(:target) {
-    scroll-behavior: smooth;
-    scroll-padding-top: 3rem;
+@media (prefers-reduced-motion: no-preference) { /*This checks if the user allow animations, as some
+people disable animations for motion sickness and accessibility reasons. If animations are allowed
+then this code runs.*/
+  :has(:target) { /* Advanced selector to check  if page has a targeted section. This is usually used for an about
+ or contact section navigation jump. */ 
+    scroll-behavior: smooth;  /*Makes scrolling animate smoothly instead of jumping instantly. */
+    scroll-padding-top: 3rem; /*Adds space at top when jumping to sections. Useful if fixed header exists. */
   }
 }
