@@ -33,6 +33,10 @@ body {
   width: 100%;   /* Allows shrinking on smaller screens. */ 
   padding: 10px;     /* Adds inner spacing. */ 
   margin: 0 auto;   /* Centers it */
+  
+  display: flex;   /* Enables flexible layout for arranging content. */
+  flex-direction: column; /* Stacks items vertically for a simple layout. */
+  gap: 20px;   /* Adds consistent spacing between sections for a clean layout. */
 }
 
 
@@ -104,7 +108,7 @@ nav ul li {
 /* Media player styling */
 .media-player {
   width: 100%;    /* Makes player take full container width. */
-  max-width: 700px;  
+  max-width: 1000px;  
   border-radius: 12px;
   display: block;
   margin: 0 auto;
@@ -114,7 +118,10 @@ nav ul li {
 
 .media-player video {
   max-width: 100%;  /* Stops video overflowing smaller screens.*/
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
 }
+
 
 
 
@@ -141,6 +148,17 @@ nav ul li {
   border-radius: 12px /* Rounds Button */
 }
 
+.custom-controls button {
+  transition: all 0.2s ease;
+}
+
+.custom-controls button:hover {
+  transform: scale(1.05); /* Makes it slightly bigger when hovering*/ 
+  opacity: 0.9; /* Makes it slightly transparent */
+}
+
+
+
 
 .progress-bar { /* Creates outer progress track. */
   width: 100%;
@@ -159,6 +177,110 @@ nav ul li {
   transition: width 0.3s ease;  /* Makes bar animate smoothly. */ 
   border-radius: 8px /* Rounds progress fill. */
 }
+/*pomodoro timer*/
+.pomodoro {
+  text-align: center; 
+  background: var(--main-bg-color);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.mode-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.mode-buttons button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 10px;
+  background: var(--main-btn-bg-color);
+  color: white;
+  cursor: pointer;
+}
+
+.mode-buttons button.active {
+  background-color: white; /* Highlight background */
+  color: #111827; /* Dark text */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+
+
+.timer {
+  font-size: 48px;
+  margin: 15px 0;
+  font-weight: bold;
+  text-align: center;
+  color: var(--main-text-color);
+}
+
+.timer-buttons button {
+  margin: 5px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 10px;
+  background: var(--main-btn-bg-color);
+  color: white;
+  cursor: pointer;
+}
+
+
+.timer-buttons button.active {
+  background-color: var(--main-text-color);
+  color: var(--main-bg-color);
+}
+
+
+/* Allow colour change when timer is on vs off to help promote a 'focus mode' */
+body {
+  background-color: #2f2c51;
+  transition: background-color 0.5s ease; /*Makes the colour transition smoother */
+}
+
+body.focus {
+  background-color: #080e1b;  /* Darker colour when the timer is in focus mode */
+}
+
+body.break {
+  background-color: #3f516b; /* Lighter colour when the focus timer is paused or finished */
+}
+
+body.long-break {
+  background-color: #374151; /* calm grey-blue */
+}
+
+/* A quote box that generates random motivational quotes */
+.quote-box {
+  text-align: center;
+  margin-top: 20px;
+  padding: 15px;
+  background: var(--main-bg-color);
+  border-radius: 12px;
+  color: var(--main-text-color);
+}
+
+/* The clickable button to generate the quotes */
+.quote-box button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: var(--main-btn-bg-color);
+  color: white;
+}
+
+p {
+  border: 1px solid rgba(255, 255, 255, 0.2); /* softer white border */
+  padding: 12px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.05); /* subtle card background */
+  margin: 10px 0; /* spacing between paragraphs */
+}
+
 
 /* Footer styling */
 footer {
@@ -168,3 +290,4 @@ footer {
   padding: 10px 0;
   width: 100%;
 }
+
