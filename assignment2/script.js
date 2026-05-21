@@ -24,8 +24,10 @@ function updateProgressBar() {
 
 
 //Pomodoro timer
+//Pomodoro timer helps lets users study as its an effective study method. 
 
 //Mode buttons for pomodoro
+//I have mode buttons for pomodoro to allow user to choose whether want to be on the focus timer, or on a short/ long break
 const modeButtons = document.querySelectorAll(".mode-btn"); //Selects all mode buttons 
 
 modeButtons.forEach(btn => { //Go through each button in modeButtons, one by one and run this code for each one
@@ -40,12 +42,11 @@ modeButtons.forEach(btn => { //Go through each button in modeButtons, one by one
   });
 });
 
-//Default mode is focus
+//Default mode is focus, 
 let time = 25 * 60; //Time variable and converts 25 minutes in seconds
 let timer; //This will store your setInterval so it can stop the timer later
 let running = false; //Tracks whether timer is currenttly running, prevents mutiple timers from stacking
 let mode = "focus"; //This is the focus mode which will be 25 minutes of work. 
-
 
 
 
@@ -133,8 +134,7 @@ function resetTimer() { //Reset timer value
     .classList.add("active"); 
 }
  
-
-
+//Resetting it makes it back to the focus timer to encourage users to be on focus mode and be more productive 
 
 
 
@@ -157,6 +157,7 @@ buttons.forEach(btn => { //Loops through each button
 
 
 //Focus Mode
+// The darker colour when on the focus mode when the timer has started is to try minimize noise and distractions
 
 function startTimer() { //Starts countdown
   if (running) return;  //Stops multiple timers running at once
@@ -187,9 +188,12 @@ if (mode === "focus") {
     }
   }, 1000); //Runs code every one second
 }
+//It will switch to a short break when the 25 minute timer is done and it will switch from short break to focus 
+//mode to encourage users to just take short breaks. If user wants long breaks, they also have the option to choose. 
 
 
 //Motivational Quotes
+//This ia an attempt users to feel motivated as sometimes users can feel quite overwhelemed when trying to finish their work. 
 
 const quotes = [ //List of motivationl quotes
   "Stay focused, you’re doing great.",   //Each string is one quote
@@ -205,3 +209,4 @@ function newQuote() { //Function to generate random quote
   const randomIndex = Math.floor(Math.random() * quotes.length); //Picks random number based on array size
   document.getElementById("quote").textContent = quotes[randomIndex]; //Displays selected quote on screen
 }
+

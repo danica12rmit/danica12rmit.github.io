@@ -55,7 +55,8 @@
       <!-- Media Player Section -->
       <div class="media-player">
         <video id="custom-video-player" controls>
-          <source
+             <!-- I chose lofi music as it is really good music to study to and encourages productivitiy  -->
+          <source 
             src="lofi.mp4"
             type="video/mp4"
           />
@@ -70,7 +71,7 @@
               height="24"
             />
           </button>
-          <!-- add the missing buttons or functionality here -->
+         
           <div class="progress-bar">
             <span id="progress-bar-fill"></span>
           </div>
@@ -80,9 +81,7 @@
 
 
     
-        
-
-<div class="mode-buttons">
+  <div class="mode-buttons">
   <button class="mode-btn" onclick="setFocus()">Focus</button>
 
   <button class="mode-btn" onclick="setBreak()">
@@ -96,19 +95,19 @@
         
       <section class="pomodoro">
         <h2>Pomodoro Timer</h2>
-
+            <!-- Makes 25 minutes the default timer -->
           <div class="timer" id="timer">25:00</div>
-
+             <!-- Start, pause and reset buttons for the timer -->
          <div class="timer-buttons">
           <button onclick="startTimer()">Start</button>
           <button onclick="pauseTimer()">Pause</button>
           <button onclick="resetTimer()">Reset</button>
          </div>
       </section>
-  
+   <!-- Allows user to generate motivational quotes to stay focused  -->
       <div class="quote-box">
   <p id="quote">“Stay focused, you’re doing great.”</p>
-  <button onclick="newQuote()">New Quote</button>      <!-- Allows user to generate motivational quotes  -->
+  <button onclick="newQuote()">New Quote</button>      
 </div>
   
   </main>
