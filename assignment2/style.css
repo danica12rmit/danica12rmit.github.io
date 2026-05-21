@@ -1,113 +1,163 @@
-:root {
-  --primary-bg-color: #f4f4f4;
-  --text-color: #333;
-  --main-bg-color: #333;
-  --main-text-color: #fff;
-  --main-btn-bg-color: #938989;
-}
-
+:root { /* My highest/global level of the webpage. I store variables here so they can be reused everywhere. */ 
+  --primary-bg-color: #111827;   /* dark charcoal blue */
+  --text-color: #d1d5db;        /* soft grey text */
+  --main-bg-color: #1f2937;     /* dark panel */
+  --main-text-color: #f9fafb;   /* off-white */
+  --main-btn-bg-color: #a78bfa; /* soft lavender */
+}  
 body,
 h1,
 p,
 ul {
   margin: 0;
-  padding: 0;
+  padding: 0;  /* Resetting default spacing that browsers add so I can control the layout instead */ 
 }
 
 body {
-  font-family: "Arial", sans-serif;
-  background-color: var(--primary-bg-color);
-  color: var(--text-color);
-  line-height: 1.6;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  font-family: "Elms Sans", sans-serif;  /*Sets default font. */
+  background-color: var(--primary-bg-color);   /*Sets background colour. */
+  color: var(--text-color);  /*Sets text colour. */
+  line-height: 1.6;  /*Sets line height. */
+  display: flex;  
+  flex-direction: column;  /*Makes page layout vertical. */
+  align-items: center;  /*Centers everything horizontally. */
+  justify-content: space-between;   /*Pushes sections apart vertically.*/
 }
 
 /* Add additional styles as needed */
 
 /* Create a container for the main content */
+
 .container {
-  max-width: 1000px;
-  width: 100%;
-  padding: 10px;
+  max-width: 1000px;  /* Limits width as without this, the content stretches too wide on large screens */ 
+  width: 100%;   /* Allows shrinking on smaller screens. */ 
+  padding: 10px;     /* Adds inner spacing. */ 
+  margin: 0 auto;   /* Centers it */
 }
+
+
 
 /* Header styling */
 header {
-  background-color: var(--main-bg-color);
-  color: var(--main-text-color);
-  padding: 10px 0;
-  text-align: center;
-  width: 100%;
+  background-color: var(--main-bg-color); /* sets background colour */ 
+  color: var(--main-text-color);  /* sets text colour */ 
+  padding: 10px 0; /* Adds vertical spacing. */ 
+  text-align: center; /* Centers text. */ 
+  width: 100%; 
 }
 
 /* Navigation styling */
 nav {
-  margin-top: 20px;
-  text-align: center;
+  margin-top: 20px;   
+  text-align: center;  /* Centers text. */ 
 }
 
 nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
+  list-style: none; /* Removes bullet points */ 
+  display: flex;  /* Makes nav items horizontal. */
+  justify-content: center;  /* Centers nav items. */ 
 }
 
 nav ul li {
-  margin-right: 20px;
+  margin-right: 20px; /* Adds gaps between menu items. */
 }
 
-nav a {
-  text-decoration: none;
-  color: var(--text-color);
+
+
+.nav-icons img {
+  width: 35px; /* Sets icon sizes. */
+  height: 35px;
 }
+
+.nav-icons a {
+  text-decoration: none;   /* Removing link underlines, cleaner ui*/
+  color: var(--text-color);
+
+  display: flex;
+  flex-direction: column;  /* Makes Icon above text. */
+  align-items: center;     /* Centers both icon and text. */
+  justify-content: center;
+
+  gap: 6px; /* Space between icon and text. */
+
+
+  transition: all 0.2s ease;   /* Allows for a smooth transaction for the hover animation 
+  which makes interactions feel more natural. */
+}
+
+
+
+.nav-icons a:hover {
+  transform: translateY(-3px);   /* Makes icons and text go up by 3 pixels*/
+  color: var(--main-btn-bg-color); /* Changes text colour on hover */
+}
+
+.nav-icons a:hover img {
+  transform: scale(1.1);
+  transition: 0.2s ease;
+}
+
+
+
+
 
 /* Media player styling */
 .media-player {
-  width: 100%;
+  width: 100%;    /* Makes player take full container width. */
+  max-width: 700px;  
+  border-radius: 12px;
+  display: block;
   margin: 0 auto;
+
 }
 
+
 .media-player video {
-  max-width: 100%;
+  max-width: 100%;  /* Stops video overflowing smaller screens.*/
 }
+
+
+
+
 
 .custom-controls {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
+  justify-content: space-between;  /* Places controls in a row. */
+  align-items: center; /* Vertically aligns controls nicely. */
+  gap: 1rem; /* Adds space between controls. */
   margin-top: 10px;
   width: 100%;
 }
 
-.custom-controls button {
-  background-color: var(--main-btn-bg-color);
+.custom-controls button { /* Styles all control buttons. */
+  background-color: var(--main-btn-bg-color); /* Accent colour. */
   color: var(--main-text-color);
-  border: none;
-  padding: 8px 12px;
-  cursor: pointer;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
+  border: none;  /* removes border */
+  padding: 8px 12px;  
+  cursor: pointer;  /* Hand cursor, shows clickable interaction */
+  font-size: 16px;  
+  display: flex;  
+  align-items: center; 
+  border-radius: 12px /* Rounds Button */
 }
 
-.progress-bar {
+
+.progress-bar { /* Creates outer progress track. */
   width: 100%;
-  height: 10px;
-  background-color: #ddd;
+  height: 10px; /* Creates a full width thin bar. */ 
+  background-color: #ddd;  /* Light grey empty track. */ 
   margin-top: 10px;
-  overflow: hidden;
+  overflow: hidden;  /* Stops fill escaping outside bar. */ 
+  border-radius: 8px /* Rounds progress bar. */
 }
 
-.progress-bar span {
+.progress-bar span {   /* This is the moving fill section.*/
   display: block;
   height: 100%;
   background-color: var(--main-bg-color);
-  width: 0;
-  transition: width 0.3s ease;
+  width: 0; /* Starts Empty */
+  transition: width 0.3s ease;  /* Makes bar animate smoothly. */ 
+  border-radius: 8px /* Rounds progress fill. */
 }
 
 /* Footer styling */
