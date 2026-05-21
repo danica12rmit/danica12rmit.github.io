@@ -77,13 +77,41 @@
         </div>
       </div>
 
-      <!-- Additional Content Section -->
-      <section>
-        <h2>Additional Content</h2>
-        <p>This is where you can showcase any other relevant content.</p>
-        <!-- Add more content as needed -->
+
+
+    
+        
+
+<div class="mode-buttons">
+  <button class="mode-btn" onclick="setFocus()">Focus</button>
+
+  <button class="mode-btn" onclick="setBreak()">
+    Short Break
+  </button>
+
+  <button class="mode-btn" onclick="setLongBreak()">
+    Long Break
+  </button>
+</div>
+        
+      <section class="pomodoro">
+        <h2>Pomodoro Timer</h2>
+
+          <div class="timer" id="timer">25:00</div>
+
+         <div class="timer-buttons">
+          <button onclick="startTimer()">Start</button>
+          <button onclick="pauseTimer()">Pause</button>
+          <button onclick="resetTimer()">Reset</button>
+         </div>
       </section>
-    </main>
+  
+      <div class="quote-box">
+  <p id="quote">“Stay focused, you’re doing great.”</p>
+  <button onclick="newQuote()">New Quote</button>      <!-- Allows user to generate motivational quotes  -->
+</div>
+  
+  </main>
 
     <!-- Footer Section -->
     <footer>
