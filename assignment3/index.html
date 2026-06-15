@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crime Scene Investigation</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="counter" id="counter">
+        0/6 Evidence Collected
+    </div>
+
+    <div class="scene">
+
+        <img src="crimescene.jpg"
+             class="scene-image"
+             alt="Crime Scene">
+
+        <!-- Evidence Hotspots -->
+<button class="hotspot clock" id="clock"
+        data-title="Clock Discovered"
+        data-text="The clock reveals a critical time clue in the case.">
+</button>
+
+<button class="hotspot knife" id="knife"
+        data-title="Knife Discovered"
+        data-text="A bloody knife may be the murder weapon.">
+</button>
+
+<button class="hotspot note" id="note"
+        data-title="Note Discovered"
+        data-text="A mysterious note contains an important clue.">
+</button>
+
+<button class="hotspot blood" id="blood"
+        data-title="Blood Stain Found"
+        data-text="The blood stain helps reconstruct the events.">
+</button>
+
+<button class="hotspot plant" id="plant"
+        data-title="Broken Plant Pot"
+        data-text="Signs of a struggle occurred near the window.">
+</button>
+
+<button class="hotspot tv" id="tv"
+        data-title="Broken Television"
+        data-text="The damaged screen may indicate forced entry.">
+</button>
+
+        <!-- Popup -->
+
+        <div class="popup hidden" id="popup">
+
+            <h2 id="popupTitle">
+                Evidence Found
+            </h2>
+
+            <p id="popupText">
+                Clue information appears here.
+            </p>
+
+            <p id="popupCount">
+                0/6 Evidence Collected
+            </p>
+
+            <button id="closePopup">
+                Continue Investigation
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="bottom-buttons">
+
+        <button class="tool-button" id="inventoryButton">
+            🔍 Evidence Inventory
+        </button>
+
+        <button class="tool-button" id="noteButton">
+            📝 Detective Notes (Read First)
+        </button>
+
+    </div>
+
+<!-- EVIDENCE INVENTORY POPUP -->
+<div class="popup hidden" id="inventoryPopup">
+    <h2>Evidence Inventory</h2>
+
+    <!-- JS will auto-fill this list -->
+    <ul id="inventoryList">
+    </ul>
+
+    <button id="closeInventory">Close</button>
+</div>
+
+
+
+<!-- DETECTIVE NOTES / MISSION BRIEF -->
+<div class="popup hidden" id="notesPopup">
+    <h2>Detective Briefing</h2>
+
+    <div id="notesContent">
+        <p><strong>Case Overview:</strong></p>
+
+        <p>
+            A crime has taken place at the scene. Your job is to investigate and collect all evidence
+            before you can solve the case.
+        </p>
+
+        <p><strong>What you need to do:</strong></p>
+
+        <ul>
+            <li>Search the crime scene for hidden evidence</li>
+            <li>Click on all interactive hotspots</li>
+            <li>Collect all 6 pieces of evidence</li>
+            <li>Review your inventory for clues</li>
+            <li>Once complete, solve the case</li>
+        </ul>
+    </div>
+
+    <button id="closeNotes">Close Briefing</button>
+</div>
+
+
+
+    <button id="solveButton" disabled>
+        Solve Case
+    </button>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
