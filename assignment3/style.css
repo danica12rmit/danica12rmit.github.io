@@ -1,13 +1,11 @@
-/* ==========================
-   GLOBAL STYLES
-========================== */
-
+/* basic reset so everything starts consistent across browsers */
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
+/* overall page styling */
 body{
     background:#01055a;
     font-family:Georgia, serif;
@@ -15,61 +13,36 @@ body{
     padding:40px 0;
 }
 
-/* ==========================
-   EVIDENCE COUNTER
-========================== */
-
+/* counter showing how much evidence has been collected */
 .counter{
-
     width:350px;
-
     margin:0 auto 40px;
-
     background:#d6cdf5;
-
     color:#161616;
-
     padding:20px;
-
     border-radius:20px;
-
     text-align:center;
-
     font-size:2rem;
-
     font-weight:bold;
 }
 
-/* ==========================
-   CRIME SCENE
-========================== */
-
+/* main crime scene container */
 .scene{
-
     position:relative;
-
     width:90%;
-
     max-width:1200px;
-
     margin:auto;
-
     overflow:hidden;
-
     border-radius:20px;
 }
 
+/* crime scene image */
 .scene-image{
-
     width:100%;
-
     display:block;
 }
 
-/* ==========================
-   HOTSPOTS
-========================== */
-
+/* clickable hotspots placed over the image */
 .hotspot{
     position:absolute;
     background:transparent;
@@ -78,7 +51,7 @@ body{
     transition:.3s;
 }
 
-/* TURN ON FOR TESTING */
+/* optional debug mode to see hotspot areas */
 /*
 .hotspot{
     background:rgba(255,0,0,.3);
@@ -90,8 +63,7 @@ body{
     box-shadow:0 0 25px white;
 }
 
-/* TV */
-
+/* tv hotspot position */
 .tv{
     top:7%;
     left:3%;
@@ -99,8 +71,7 @@ body{
     height:28%;
 }
 
-/* Blood Splatter (#5) */
-
+/* blood stain hotspot */
 .blood{
     top:37%;
     left:12%;
@@ -108,8 +79,7 @@ body{
     height:18%;
 }
 
-/* Knife (#3) */
-
+/* knife hotspot */
 .knife{
     bottom:2%;
     left:23%;
@@ -117,8 +87,7 @@ body{
     height:7%;
 }
 
-/* Note (#2) */
-
+/* note hotspot */
 .note{
     bottom:8%;
     right:13%;
@@ -126,8 +95,7 @@ body{
     height:10%;
 }
 
-/* Broken Plant */
-
+/* broken plant hotspot */
 .plant{
     bottom:10%;
     right:6%;
@@ -135,8 +103,7 @@ body{
     height:24%;
 }
 
-/* Clock */
-
+/* clock hotspot */
 .clock{
     top:18%;
     right:4%;
@@ -145,193 +112,123 @@ body{
     border-radius:50%;
 }
 
-/* ==========================
-   POPUP
-========================== */
-
+/* popup box styling */
 .popup{
-
     position:absolute;
-
     top:50%;
-
     left:50%;
-
     transform:translate(-50%, -50%);
-
     width:500px;
-
     max-width:90%;
-
     background:rgba(0,0,70,.88);
-
     color:white;
-
     padding:40px;
-
     border-radius:25px;
-
     backdrop-filter:blur(4px);
-
     z-index:100;
 }
 
+/* popup title */
 .popup h2{
-
     font-size:2.3rem;
-
     margin-bottom:15px;
 }
 
+/* popup text */
 .popup p{
-
     font-size:1.3rem;
-
     line-height:1.5;
 }
 
+/* evidence counter inside popup */
 #popupCount{
-
     margin-top:20px;
-
     font-weight:bold;
 }
 
+/* close/continue button inside popup */
 #closePopup{
-
     margin-top:25px;
-
     border:none;
-
     background:#d6cdf5;
-
     padding:12px 20px;
-
     border-radius:12px;
-
     cursor:pointer;
-
     font-size:1rem;
 }
 
+/* hover effect for popup button */
 #closePopup:hover{
-
     transform:scale(1.05);
 }
 
-/* ==========================
-   HIDDEN
-========================== */
-
+/* hidden class used to toggle visibility */
 .hidden{
-
     display:none;
 }
 
-/* ==========================
-   BOTTOM BUTTONS
-========================== */
-
+/* bottom navigation buttons */
 .bottom-buttons{
-
     width:90%;
-
     max-width:1200px;
-
     margin:30px auto;
-
     display:flex;
-
     gap:30px;
 }
 
+/* inventory and notes buttons */
 .tool-button{
-
     flex:1;
-
     background:#d6cdf5;
-
     border:none;
-
     border-radius:20px;
-
     padding:20px;
-
     font-size:1.4rem;
-
     cursor:pointer;
-
     transition:.3s;
 }
 
+/* hover effect for bottom buttons */
 .tool-button:hover{
-
     transform:translateY(-3px);
 }
 
-/* ==========================
-   SOLVE CASE BUTTON
-========================== */
-
+/* solve case button (hidden until all evidence found) */
 #solveButton{
-
     display:none;
-
     margin:20px auto;
-
     padding:18px 40px;
-
     border:none;
-
     border-radius:20px;
-
     background:#d6cdf5;
-
     font-size:1.5rem;
-
     cursor:pointer;
 }
 
+/* shows solve button when game is complete */
 #solveButton.show{
-
     display:block;
 }
 
-/* ==========================
-   FOUND EVIDENCE
-========================== */
-
+/* visual effect when evidence is collected */
 .found{
-
     opacity:.35;
-
     pointer-events:none;
 }
 
+/* small pulse animation when evidence is found */
 @keyframes pulse{
-
-    0%{
-        transform:scale(1);
-    }
-
-    50%{
-        transform:scale(1.15);
-    }
-
-    100%{
-        transform:scale(1);
-    }
+    0%{ transform:scale(1); }
+    50%{ transform:scale(1.15); }
+    100%{ transform:scale(1); }
 }
 
+/* apply animation to collected hotspots */
 .hotspot.found{
-
     animation:pulse .5s ease;
 }
 
-/* ==========================
-   MOBILE
-========================== */
-
+/* mobile responsive adjustments */
 @media(max-width:768px){
 
     .counter{

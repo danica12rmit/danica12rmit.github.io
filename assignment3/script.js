@@ -4,19 +4,19 @@ let evidenceCollected = 0; //counts how many clues the player has found
 const totalEvidence = 6; //total clues needed to finish the case
 let inventory = []; //stores names of collected evidence (prevents duplicates)
 
-// popup mode: "evidence" | "solve"
-let popupMode = "evidence";
 
+let popupMode = "evidence"; 
+/// Tracks which popup is currently being shown, "evidence" during gameplay or "solve" for the final case scree
 
 
 // Connects JavaScript to HTML so it can control the UI
 // This includes the popups, text updates, counters, buttons, and inventory system.
 // dom elements
 const popup = document.getElementById("popup"); // Main popup container used for showing clues and messages
-const popupTitle = document.getElementById("popupTitle"); // Title text inside popup (e.g. "Clock Discovered")
+const popupTitle = document.getElementById("popupTitle"); // Title text inside popup (e.g. clock discovered)
 const popupText = document.getElementById("popupText"); // Description text inside popup (clue information)
-const popupCount = document.getElementById("popupCount"); // Evidence progress text inside popup (e.g. 3/6 Evidence Collected)
-const counter = document.getElementById("counter"); // Main on-screen counter showing total progress
+const popupCount = document.getElementById("popupCount"); // Evidence progress text inside popup (e.g. 3/6 evidence collected)
+const counter = document.getElementById("counter"); // Main on screen counter showing total progress
 // game control buttons
 const solveButton = document.getElementById("solveButton"); // Button used to finish the case when all evidence is collected
 const closePopup = document.getElementById("closePopup"); // Button used to close popup and continue investigating
@@ -57,9 +57,7 @@ function updateUI(title, description) {   // Show the popup when new evidence is
     }
 }
 
-// -------------------------------
 // INVENTORY SYSTEM
-// -------------------------------
 // This function adds collected evidence to the inventory list.
 // It prevents duplicates and updates both the data array and the UI.
 
@@ -75,27 +73,33 @@ function addToInventory(itemName) {
     // Add the item to the visible inventory list on screen
 }
 
-// -------------------------------
 // COLLECT EVIDENCE
-// -------------------------------
 function collectEvidence(element, title, description) {
+
+    // Prevent collecting the same evidence twice
     if (element.classList.contains("found")) return;
 
+    // Mark evidence as collected visually
     element.classList.add("found");
+
+    // Increase total evidence count
     evidenceCollected++;
 
-    let cleanName = title
+    // Clean up the title for inventory display
+    const cleanName = title
         .replace(" Discovered", "")
         .replace(" Found", "");
 
+    // Add item to inventory list
     addToInventory(cleanName);
 
+    // Update popup and counter UI
     updateUI(title, description);
 }
 
-// -------------------------------
 // HOTSPOTS
-// -------------------------------
+// Each hotspot listens for a click event and calls collectEvidence() 
+// passing in the element, title, and description for the popup.
 document.getElementById("clock").addEventListener("click", function () {
     collectEvidence(this, "Clock Discovered", "The clock reveals a critical time clue in the case.");
 });
@@ -120,48 +124,48 @@ document.getElementById("plant").addEventListener("click", function () {
     collectEvidence(this, "Broken Plant Pot", "Signs of a struggle occurred near the window.");
 });
 
-// -------------------------------
+
 // CLOSE MAIN POPUP
-// -------------------------------
+// Hides the popup and resets the mode back to evidence gameplay state
 closePopup.addEventListener("click", function () {
     popup.classList.add("hidden");
     popupMode = "evidence";
 });
 
-// -------------------------------
+
 // SOLVE CASE
-// -------------------------------
+// When clicked, shows the final "Case Solved" screen and switches popup into solve mode (final game state)
 solveButton.addEventListener("click", function () {
     popup.classList.remove("hidden");
 
+ // Switch to solve mode so UI behaves differently (no continue button, final screen)
     popupMode = "solve";
-    closePopup.style.display = "none";
-
-    popupTitle.textContent = "Case Solved";
+    closePopup.style.display = "none"; // Hide the "Continue Investigation" button in final screen
+// Final result text
+    popupTitle.textContent = "Case Solved";   
     popupText.textContent =
-        "You successfully collected all evidence and solved the mystery.";
+        "You successfully collected all evidence and solved the mystery."; 
 
-    popupCount.textContent = `${evidenceCollected}/${totalEvidence} Evidence Collected`;
+    popupCount.textContent = `${evidenceCollected}/${totalEvidence} Evidence Collected`;// Final evidence count display 
 });
 
-// -------------------------------
+
 // INVENTORY POPUP
-// -------------------------------
+// Opens the inventory popup when the inventory button is clicked
 inventoryButton.addEventListener("click", function () {
     inventoryPopup.classList.remove("hidden");
 });
-
+// Closes the inventory popup when the close button is clicked
 closeInventory.addEventListener("click", function () {
     inventoryPopup.classList.add("hidden");
 });
 
-// -------------------------------
 // NOTES POPUP
-// -------------------------------
+// Opens the detective notes popup (mission briefing / instructions)
 noteButton.addEventListener("click", function () {
     notesPopup.classList.remove("hidden");
 });
-
+// Closes the detective notes popup
 closeNotes.addEventListener("click", function () {
     notesPopup.classList.add("hidden");
 });
